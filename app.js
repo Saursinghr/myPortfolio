@@ -57,30 +57,8 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const darkModeRadio = document.getElementById("dark-mode");
-    const lightModeRadio = document.getElementById("light-mode");
+const toggleSwitch = document.getElementById('toggle-switch');
 
-    // Check local storage for theme preference
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        darkModeRadio.checked = true;
-    } else {
-        document.body.classList.add("light-mode");
-        lightModeRadio.checked = true;
-    }
-
-    // Event listeners for the radio buttons
-    darkModeRadio.addEventListener("change", () => {
-        document.body.classList.remove("light-mode");
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark");
-    });
-
-    lightModeRadio.addEventListener("change", () => {
-        document.body.classList.remove("dark-mode");
-        document.body.classList.add("light-mode");
-        localStorage.setItem("theme", "light");
-    });
+toggleSwitch.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode', toggleSwitch.checked);
 });
