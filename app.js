@@ -55,3 +55,32 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const darkModeRadio = document.getElementById("dark-mode");
+    const lightModeRadio = document.getElementById("light-mode");
+
+    // Check local storage for theme preference
+    const currentTheme = localStorage.getItem("theme");
+    if (currentTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        darkModeRadio.checked = true;
+    } else {
+        document.body.classList.add("light-mode");
+        lightModeRadio.checked = true;
+    }
+
+    // Event listeners for the radio buttons
+    darkModeRadio.addEventListener("change", () => {
+        document.body.classList.remove("light-mode");
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+    });
+
+    lightModeRadio.addEventListener("change", () => {
+        document.body.classList.remove("dark-mode");
+        document.body.classList.add("light-mode");
+        localStorage.setItem("theme", "light");
+    });
+});
