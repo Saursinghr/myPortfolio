@@ -196,16 +196,20 @@
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
                 <h2 class="section-title">Contact</h2>
-
-                <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="SEND" class="contact__button button">
-                    </form>
-                </div>
+                <form action="https://api.web3forms.com/submit" method="POST">
+            
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="4ae8ed56-dd1e-4c23-b81a-bf59c7be3b30">
+            
+                    <div class="contact__container bd-grid">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" placeholder="Your message" cols="30" rows="10" class="contact__input" required></textarea>
+                        <input type="submit" value="Submit" class="contact__button button">
+                    </div>
+                </form>
             </section>
+            
         </main>
 
 
