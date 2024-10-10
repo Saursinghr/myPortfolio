@@ -28,7 +28,7 @@ body{
   --z-back: -10;
   --z-fixed: 100;
 }
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 668px) {
   :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
@@ -314,10 +314,17 @@ img {
   font-weight: 20px;
   border-radius: 1rem;
   transition: 0.3s;
+
 }
 .button:hover {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }
+/* .button_cv{
+  display: flex;
+  justify-content: center;
+  background-color: #2196F3
+  
+} */
 
 /* ===== ABOUT =====*/
 .about__container {
@@ -544,8 +551,10 @@ img {
   }
   .home__img {
     width: 400px;
-    bottom: 10%;
+    bottom: -10%;
+    left: 75%;
   }
+  
   .about__container {
     padding-top: 2rem;
   }
